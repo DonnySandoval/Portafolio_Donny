@@ -1,8 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-const defaultConfig = require("shadcn/ui/tailwind.config")
-
 module.exports = {
-  ...defaultConfig,
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -10,15 +7,12 @@ module.exports = {
     "*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    ...defaultConfig.theme,
     extend: {
-      ...defaultConfig.theme.extend,
       fontFamily: {
         mono: ["var(--font-jetbrains-mono)", "monospace"],
-        sans: ["var(--font-jetbrains-mono)", "monospace"], // Use mono font as default
+        sans: ["var(--font-jetbrains-mono)", "monospace"],
       },
       colors: {
-        ...defaultConfig.theme.extend.colors,
         gray: {
           900: "#0f0f0f",
           800: "#1a1a1a",
@@ -92,7 +86,6 @@ module.exports = {
         },
       },
       animation: {
-        ...defaultConfig.theme.extend.animation,
         pulse: "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
         spin: "spin 1s linear infinite",
         ping: "ping 1s cubic-bezier(0, 0, 0.2, 1) infinite",
@@ -111,5 +104,5 @@ module.exports = {
       },
     },
   },
-  plugins: [...defaultConfig.plugins, require("tailwindcss-animate")],
-}
+  plugins: [require("tailwindcss-animate")],
+};
